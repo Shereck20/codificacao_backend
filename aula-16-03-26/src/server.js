@@ -1,22 +1,10 @@
-const express = require("express");
+import express from "express";
+import fruitsRoutes from "./routes/fruitsRoutes.js";
+
 const app = express();
+const port = 3000;
+app.use(fruitsRoutes);
 
-const frutas = [
-  { id: 1, nome: "Maçã"},
-  { id: 2, nome: "Banana"},
-  { id: 3, nome: "Uva"},
-  { id: 4, nome: "Laranja"}
-];
-
-function pegarFrutaPorId(id) {
-  return frutas.find(fruta => fruta.id === Number(id));
-}
-
-app.get("/frutas/:id", (req, res) => {
-  const fruta = pegarFrutaPorId(req.params.id);
-  res.json(fruta);
-});
-
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
