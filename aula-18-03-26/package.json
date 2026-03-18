@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "server": "node --watch atividade-config-server/src/server.js",
+    "estudante": "node --watch atividade-estudantes/src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
